@@ -1,0 +1,403 @@
+// Style général
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3f3;
+  }
+  
+  section {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+  
+    hr {
+      background: #ff4800;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  hr {
+    width: 5rem;
+    height: .3125rem;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  // Header
+  
+  .navbar-responsive {
+    background-color: #282828;
+  
+    ul {
+      text-align: center;
+  
+      li {
+        height: 4rem;
+        @include font(1.125rem, 300, 4rem, #fff);
+  
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+  
+  header {
+    width: 100%;
+    height: 40.625rem;
+    padding-top: 3.125rem;
+    background-image: url('../img/site/trame.png'), url('../img/site/header.jpg');
+    background-position: center;
+    background-repeat: repeat, no-repeat;
+    background-size: cover;
+  
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 102dpi) {
+      background-image: url('../img/site/header.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  
+    .logonavbar {
+      .logo {
+        h1 {
+          @include font(2.5rem, 700, 2.5rem, #fff);
+  
+          span {
+            font-weight: 400;
+          }
+        }
+  
+        hr {
+          background: #fff;
+          margin: 0;
+        }
+  
+        h2 {
+          @include font(.875rem, 300, .875rem, #fff);
+          opacity: .5;
+          margin-top: 1.875rem;
+        }
+      }
+  
+      .navbar {
+        ul {
+          float: right;
+  
+          li {
+            float: left;
+            @include font(1.125rem, 300, 2.5rem, #fff);
+  
+            + li {
+              margin-left: 3rem;
+            }
+  
+            a {
+              color: inherit;
+  
+              &.hvr-underline-from-left::before {
+                background: #22e7e7;
+              }
+            }
+          }
+        }
+  
+        img.menu {
+          width: 2.5rem;
+        }
+      }
+    }
+  
+    h1.catchphrase {
+      @include font(3.125rem, 300, 3.125rem, #fff);
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 9rem;
+  
+      span {
+        font-weight: 600;
+      }
+    }
+  
+    a.down-arrow {
+      display: block;
+      width: 4.125rem;
+      margin: auto;
+      margin-top: 6.875rem;
+  
+      img {
+        width: 100%;
+        animation: arrow 1s ease-in-out infinite alternate;
+      }
+    }
+  
+    @keyframes arrow {
+      from {
+        opacity: 1;
+        margin-top: 0;
+      }
+  
+      to {
+        opacity: .2;
+        margin-top: 2rem;
+      }
+    }
+  }
+  
+  // A propos
+  
+  .about {
+    h2 {
+      @include font(2.1875rem, 800, 2.1875rem, #282828);
+      text-align: center;
+    }
+  
+    h3 {
+      margin-bottom: 2rem;
+      @include font(1.5625rem, 600, 1.5625rem, #282828);
+    }
+  
+    p {
+      margin-bottom: 2rem;
+      @include font(1.25rem, 400, 1.875rem, #282828);
+    }
+  
+    ul {
+      list-style: url('../img/site/puce.svg');
+      @include font(1.25rem, 700, 1.875rem, #282828);
+      margin-bottom: 2rem;
+      list-style-position: inside;
+  
+      a {
+        color: #ff4800;
+        text-decoration: underline;
+      }
+    }
+  
+    img.picture {
+      float: right;
+      object-fit: contain;
+      
+    }
+  
+    .social-networks {
+      text-align: center;
+  
+      a {
+        + a {
+          margin-left: .3125rem;
+        }
+  
+        img {
+          width: 2.1875rem;
+        }
+      }
+    }
+  }
+
+  // Mes compétences
+
+  .skill {
+    background-color: #282828;
+    
+    
+    h2 {
+      @include font(2.1875rem, 800, 2.1875rem, #f3f3f3);
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 4.6845rem;
+      @include font(1.25rem, 400, 1.25rem, #ccc);
+      text-align: center;
+
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5625rem;
+
+      .percent {
+        @include font(6.25rem, 700, 6.25rem, #ccc);
+      }
+
+      .progress-container{
+        flex-basis: 100%;
+        padding-left: 2 rem;
+
+
+        strong {
+          @include font(1.25rem, 700, 1.25rem, #f3f3f3);
+        }
+
+        .progress {
+          margin-top: 1rem;
+          border-radius: 0;
+          background-color: #656565;
+
+
+          .progress-bar {
+            height: 1.125rem;
+            background-color: #38f3f3;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  // Mes expériences professionnelles
+
+  .experience {
+    h2 {
+      text-align: center;
+      @include font(2.1875rem, 800, 2.1875rem, #282828);
+    }
+
+    hr {
+      margin-bottom: 0;
+    }
+
+    article {
+      position: relative;
+      margin-top: 4.375rem;
+      background-color: #282828;
+      padding: 1.25rem 2.1875rem 3.4375rem;
+
+      .period {
+        position: absolute;
+        height: 4.375rem;
+        background: #ff4800;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        top: -1.125rem;
+        left: -.875rem;
+        @include font(1.5625rem, 700, 4.375rem, #fff);
+      }
+
+      h3,h4 {
+        text-align: right;
+      }
+
+      h3 {
+        @include font(1.5625rem, 700, 1.5625rem, #fff);
+
+        &::before{
+          content: url(../img/site/puce.svg);
+          padding-right: 0.625rem;
+        }
+      }
+
+      h4 {
+        margin-bottom: 2.8125rem;
+        @include font(.9375rem, 400, .9375, #8d8d8d);
+      }
+
+      p {
+        @include font(1.125rem, 400, 1.875, #ccc);
+        text-align: justify;
+      }
+    }
+  }
+
+  // Mes réalisations
+
+  .work {
+    background-color: #dadada;
+
+    h2 {
+
+      text-align: center;
+      @include font(2.1875rem, 800, 2.1875rem, #282828);
+    }
+
+    p {
+      margin-bottom: 5.25rem;
+      @include font(1.5625rem, 800, 1.5625rem, #282828);
+      text-align: center;
+    }
+
+    figure {
+      position: relative;
+      margin-bottom: 0;
+      margin-top: 1rem;
+
+      img {
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        background-color: #fff;
+        opacity: 0;
+        padding-top: 3.9375rem;
+        transition: opacity .6s ease;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        h3, h4 {
+          text-align: center;
+        }
+
+        h3 {
+          margin-bottom: 1rem;
+          @include font(1.25rem, 700, 1.25rem, #282828);
+        }
+
+        h4 {
+          margin-bottom: 2rem;
+          @include font(.875rem, 400, .875rem, #282828);
+        }
+
+        a {
+          display: block;
+          width: 1.625rem;
+          margin: auto;
+        }
+      }
+    }
+
+  }
+
+  //footer
+
+  footer {
+    margin-top: 4.375rem;
+    margin-bottom: 1.5rem;
+    @include font(1.125rem, 400, 1.125rem, #666);
+    text-align: center;
+
+    ul {
+      margin-bottom: 4.375rem;
+      text-align: center;
+
+      li {
+        display: inline;
+        @include font(1.125rem, 400, 1.125rem, #282828);
+
+        a {
+          color: inherit;
+        }
+
+      }
+    }
+
+  }
